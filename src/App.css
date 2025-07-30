@@ -1,0 +1,639 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  /* Cybersecurity theme colors - Enhanced visibility */
+  --background: oklch(0.04 0.02 240);
+  --foreground: oklch(0.98 0.02 240);
+  --card: oklch(0.1 0.02 240);
+  --card-foreground: oklch(0.98 0.02 240);
+  --popover: oklch(0.1 0.02 240);
+  --popover-foreground: oklch(0.98 0.02 240);
+  --primary: oklch(0.7 0.25 180);
+  --primary-foreground: oklch(0.04 0.02 240);
+  --secondary: oklch(0.25 0.05 240);
+  --secondary-foreground: oklch(0.98 0.02 240);
+  --muted: oklch(0.18 0.02 240);
+  --muted-foreground: oklch(0.85 0.02 240); /* Plus clair pour meilleure visibilité */
+  --accent: oklch(0.75 0.3 120);
+  --accent-foreground: oklch(0.04 0.02 240);
+  --destructive: oklch(0.65 0.3 0);
+  --border: oklch(0.3 0.05 240);
+  --input: oklch(0.2 0.02 240);
+  --ring: oklch(0.7 0.25 180);
+  --chart-1: oklch(0.7 0.25 180);
+  --chart-2: oklch(0.75 0.3 120);
+  --chart-3: oklch(0.65 0.3 300);
+  --chart-4: oklch(0.7 0.3 60);
+  --chart-5: oklch(0.65 0.3 0);
+  --sidebar: oklch(0.1 0.02 240);
+  --sidebar-foreground: oklch(0.98 0.02 240);
+  --sidebar-primary: oklch(0.7 0.25 180);
+  --sidebar-primary-foreground: oklch(0.04 0.02 240);
+  --sidebar-accent: oklch(0.25 0.05 240);
+  --sidebar-accent-foreground: oklch(0.98 0.02 240);
+  --sidebar-border: oklch(0.3 0.05 240);
+  --sidebar-ring: oklch(0.7 0.25 180);
+  
+  /* Custom cybersecurity colors - Enhanced */
+  --cyber-blue: oklch(0.7 0.25 180);
+  --cyber-green: oklch(0.75 0.3 120);
+  --cyber-purple: oklch(0.65 0.3 300);
+  --cyber-red: oklch(0.65 0.3 0);
+  --cyber-yellow: oklch(0.7 0.3 60);
+  --matrix-green: oklch(0.75 0.35 140);
+  
+  /* Nouvelles couleurs pour meilleure visibilité */
+  --text-light: oklch(0.9 0.02 240); /* Plus clair que slate-300 */
+  --text-medium: oklch(0.8 0.02 240); /* Alternative à slate-400 */
+  --text-dark: oklch(0.6 0.02 240); /* Alternative à slate-600 */
+}
+
+.dark {
+  --background: oklch(0.03 0.02 240);
+  --foreground: oklch(0.98 0.02 240);
+  --card: oklch(0.06 0.02 240);
+  --card-foreground: oklch(0.98 0.02 240);
+  --popover: oklch(0.06 0.02 240);
+  --popover-foreground: oklch(0.98 0.02 240);
+  --primary: oklch(0.7 0.25 180);
+  --primary-foreground: oklch(0.03 0.02 240);
+  --secondary: oklch(0.12 0.02 240);
+  --secondary-foreground: oklch(0.98 0.02 240);
+  --muted: oklch(0.1 0.02 240);
+  --muted-foreground: oklch(0.85 0.02 240); /* Plus clair pour meilleure visibilité */
+  --accent: oklch(0.75 0.3 120);
+  --accent-foreground: oklch(0.03 0.02 240);
+  --destructive: oklch(0.65 0.3 0);
+  --border: oklch(0.15 0.02 240);
+  --input: oklch(0.12 0.02 240);
+  --ring: oklch(0.7 0.25 180);
+  
+  /* Nouvelles couleurs pour meilleure visibilité en mode sombre */
+  --text-light: oklch(0.9 0.02 240);
+  --text-medium: oklch(0.8 0.02 240);
+  --text-dark: oklch(0.6 0.02 240);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom cybersecurity animations */
+@keyframes matrix-rain {
+  0% { transform: translateY(-100vh); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+@keyframes neon-glow {
+  0%, 100% { box-shadow: 0 0 5px var(--cyber-blue), 0 0 10px var(--cyber-blue), 0 0 15px var(--cyber-blue); }
+  50% { box-shadow: 0 0 10px var(--cyber-blue), 0 0 20px var(--cyber-blue), 0 0 30px var(--cyber-blue); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { border-color: transparent; }
+  51%, 100% { border-color: var(--cyber-green); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-cyber {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Utility classes */
+.matrix-rain {
+  animation: matrix-rain 3s linear infinite;
+}
+
+.glitch-effect {
+  animation: glitch 0.3s ease-in-out infinite alternate;
+}
+
+.neon-glow {
+  animation: neon-glow 2s ease-in-out infinite alternate;
+}
+
+.typing-effect {
+  animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+  border-right: 2px solid var(--cyber-green);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse-cyber {
+  animation: pulse-cyber 2s ease-in-out infinite;
+}
+
+.animate-gradient-x {
+  background-size: 300% 300%;
+  animation: gradient-x 3s ease infinite;
+}
+
+/* Gradient backgrounds */
+.cyber-gradient {
+  background: linear-gradient(135deg, 
+    oklch(0.05 0.02 240) 0%, 
+    oklch(0.08 0.02 240) 25%, 
+    oklch(0.06 0.02 240) 50%, 
+    oklch(0.04 0.02 240) 75%, 
+    oklch(0.05 0.02 240) 100%);
+}
+
+.matrix-bg {
+  background: radial-gradient(ellipse at center, 
+    oklch(0.08 0.02 240) 0%, 
+    oklch(0.03 0.02 240) 70%);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: oklch(0.05 0.02 240);
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.65 0.2 180);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.7 0.25 180);
+}
+
+/* Responsive Design Improvements */
+@media (max-width: 768px) {
+  .typing-effect {
+    animation: typing 2s steps(30, end), blink 0.75s step-end infinite;
+  }
+  
+  .float-animation {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .matrix-rain {
+    animation: matrix-rain 2s linear infinite;
+  }
+}
+
+@media (max-width: 640px) {
+  .neon-glow {
+    animation: neon-glow 1.5s ease-in-out infinite alternate;
+  }
+  
+  .glitch-effect {
+    animation: glitch 0.2s ease-in-out infinite alternate;
+  }
+}
+
+/* Performance Optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .matrix-rain,
+  .glitch-effect,
+  .neon-glow,
+  .typing-effect,
+  .float-animation,
+  .pulse-cyber,
+  .animate-gradient-x {
+    animation: none;
+  }
+  
+  * {
+    transition: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --background: oklch(0 0 0);
+    --foreground: oklch(1 0 0);
+    --primary: oklch(0.8 0.3 180);
+    --accent: oklch(0.8 0.3 120);
+    --border: oklch(0.5 0 0);
+  }
+}
+
+/* Print styles */
+@media print {
+  .matrix-rain,
+  .glitch-effect,
+  .neon-glow,
+  .float-animation,
+  .pulse-cyber {
+    display: none;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid var(--primary);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  .typing-effect {
+    border-right: none;
+    border-left: 2px solid var(--cyber-green);
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .neon-glow {
+    animation: none;
+    box-shadow: 0 0 10px var(--cyber-blue), 0 0 20px var(--cyber-blue);
+  }
+  
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+  
+  .hover\:scale-110:hover {
+    transform: none;
+  }
+}
+
+/* Container queries for better responsive design */
+@container (max-width: 768px) {
+  .container-responsive {
+    padding: 1rem;
+  }
+}
+
+@container (min-width: 769px) {
+  .container-responsive {
+    padding: 2rem;
+  }
+}
+
+/* Cybersecurity portfolio fixes */
+.skills-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Ensure skills cards are visible on all devices */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Mobile navigation improvements */
+.mobile-nav-menu {
+  background: rgba(var(--card), 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(var(--border), 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+}
+
+/* Ensure proper z-index stacking */
+.nav-overlay {
+  z-index: 30;
+}
+
+.nav-dropdown {
+  z-index: 50;
+}
+
+.mobile-nav {
+  z-index: 40;
+}
+
+/* Force visibility of skill elements */
+.skill-category-card {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.skill-category-card .space-y-6 {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5rem !important;
+}
+
+.skill-category-card .space-y-4 {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+}
+
+.skill-bar-container {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+}
+
+.skill-item {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Force better visibility for remaining muted text */
+.text-muted-foreground {
+  color: rgb(203 213 225) !important; /* slate-300 */
+}
+
+.bg-muted {
+  background-color: rgb(51 65 85) !important; /* slate-700 */
+}
+
+/* Better borders for better visibility */
+.border-muted {
+  border-color: rgb(71 85 105) !important; /* slate-600 */
+}
+
+/* Improve text contrast and visibility */
+.text-muted-alternative {
+  color: rgb(203 213 225) !important; /* slate-300 */
+}
+
+/* Nouvelles classes pour remplacer les couleurs grises problématiques */
+.text-visible-light {
+  color: rgb(226 232 240) !important; /* slate-200 - plus clair */
+}
+
+.text-visible-medium {
+  color: rgb(203 213 225) !important; /* slate-300 - visibilité améliorée */
+}
+
+.text-visible-dark {
+  color: rgb(148 163 184) !important; /* slate-400 - pour les éléments moins importants */
+}
+
+/* Classes spécifiques pour remplacer text-slate-300 */
+.text-slate-300 {
+  color: rgb(226 232 240) !important; /* slate-200 au lieu de slate-300 */
+}
+
+/* Classes pour les backgrounds gris */
+.bg-slate-700 {
+  background-color: rgb(51 65 85) !important;
+}
+
+.bg-slate-600 {
+  background-color: rgb(71 85 105) !important;
+}
+
+/* Better contrast for mobile devices */
+@media (max-width: 768px) {
+  .text-muted-foreground {
+    color: rgb(226 232 240) !important; /* slate-200 pour meilleure visibilité */
+  }
+  
+  .text-slate-300 {
+    color: rgb(226 232 240) !important; /* slate-200 au lieu de slate-300 */
+    font-weight: 500; /* Slightly bolder on mobile */
+  }
+  
+  .text-slate-400 {
+    color: rgb(203 213 225) !important; /* slate-300 au lieu de slate-400 */
+  }
+  
+  /* Improve button and interactive elements visibility */
+  .hover\:text-primary:hover {
+    color: rgb(0 255 255) !important; /* Brighter primary color on hover */
+  }
+  
+  /* Améliorer la visibilité des textes sur mobile */
+  .text-visible-light {
+    color: rgb(241 245 249) !important; /* slate-100 - encore plus clair sur mobile */
+  }
+  
+  .text-visible-medium {
+    color: rgb(226 232 240) !important; /* slate-200 - plus clair sur mobile */
+  }
+  
+  /* Améliorer l'affichage du nom sur mobile */
+  .hero-name {
+    font-size: 2rem !important; /* Taille plus petite sur mobile */
+    line-height: 1.2 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  /* Assurer que le texte holographique s'affiche correctement */
+  .holographic-text {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  
+  /* Améliorer la visibilité des tags/technologies sur mobile */
+  .tech-tag {
+    background-color: rgb(51 65 85) !important; /* slate-700 */
+    color: rgb(226 232 240) !important; /* slate-200 */
+    border-color: rgb(71 85 105) !important; /* slate-600 */
+    font-weight: 500 !important;
+  }
+  
+  .tech-tag:hover {
+    background-color: rgb(71 85 105) !important; /* slate-600 */
+    color: rgb(241 245 249) !important; /* slate-100 */
+  }
+  
+  /* Améliorer la visibilité des éléments UI restants */
+  .text-muted-foreground {
+    color: rgb(226 232 240) !important; /* slate-200 au lieu de muted */
+  }
+  
+  /* Améliorer les placeholders et inputs */
+  .placeholder\:text-muted-foreground::placeholder {
+    color: rgb(203 213 225) !important; /* slate-300 */
+  }
+  
+  /* Améliorer les icônes et éléments de navigation */
+  [class*="text-muted-foreground"] {
+    color: rgb(226 232 240) !important; /* slate-200 */
+  }
+}
+
+/* Styles pour très petits écrans (smartphones) */
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: 1.5rem !important; /* Encore plus petit sur très petits écrans */
+    line-height: 1.1 !important;
+  }
+  
+  /* Réduire l'espacement sur très petits écrans */
+  .hero-content {
+    gap: 1rem !important;
+  }
+  
+  /* Améliorer la lisibilité des textes */
+  .text-visible-light {
+    color: rgb(248 250 252) !important; /* slate-50 - très clair */
+    font-weight: 500 !important;
+  }
+  
+  /* Améliorer la visibilité des tags/technologies sur mobile */
+  .tech-tag {
+    background-color: rgb(51 65 85) !important; /* slate-700 */
+    color: rgb(226 232 240) !important; /* slate-200 */
+    border-color: rgb(71 85 105) !important; /* slate-600 */
+    font-weight: 500 !important;
+  }
+  
+  .tech-tag:hover {
+    background-color: rgb(71 85 105) !important; /* slate-600 */
+    color: rgb(241 245 249) !important; /* slate-100 */
+  }
+}
+@media (max-width: 768px) {
+  button, .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .mobile-nav-link {
+    padding: 1rem !important;
+    display: block !important;
+    width: 100% !important;
+  }
+}
