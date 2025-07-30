@@ -147,12 +147,13 @@ const Footer = () => {
 
             {/* Made with love */}
             <div className="flex items-center space-x-2 text-visible-light text-sm">
-              <span>{t('footer.madeWith')}</span>
+              <span>{t('footer.made')}</span>
               <span>{t('footer.by')} Youssef</span>
             </div>
           </div>
         </motion.div>
       </div>
+
 
       {/* Scroll to Top Button */}
       <motion.button
