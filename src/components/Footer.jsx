@@ -112,7 +112,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <h3 className="text-lg font-semibold text-secondary">Contact</h3>
-                          <div className="space-y-2 text-visible-light">
+            <div className="space-y-2 text-visible-light">
               <p>Fès, Morocco</p>
               <a 
                 href="mailto:youssef.berrissoul.15@edu.uiz.ac.ma"
@@ -147,38 +147,37 @@ const Footer = () => {
 
             {/* Made with love */}
             <div className="flex items-center space-x-2 text-visible-light text-sm">
-              <span>{t('footer.made')}</span>
-              <span>{t('footer.by')} Youssef</span>
+              <span>{t('footer.madeWith')}</span>
+              <span>{t('footer.by')} Youssef Berrissoul</span>
             </div>
           </div>
         </motion.div>
-      </div>
 
+        {/* Scroll to Top Button */}
+        <motion.button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 p-3 bg-primary text-primary-foreground rounded-full shadow-lg hover:bg-primary/90 transition-all z-50"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          aria-label="Scroll to top"
+        >
+          <ArrowUp size={20} />
+        </motion.button>
 
-      {/* Scroll to Top Button */}
-      <motion.button
-        onClick={scrollToTop}
-        className="fixed bottom-8 right-8 p-3 bg-primary text-primary-foreground rounded-full shadow-lg hover:bg-primary/90 transition-all z-50"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        aria-label="Scroll to top"
-      >
-        <ArrowUp size={20} />
-      </motion.button>
-
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="w-full h-full"
-             style={{
-               backgroundImage: `
-                 linear-gradient(rgba(101, 163, 13, 0.1) 1px, transparent 1px),
-                 linear-gradient(90deg, rgba(101, 163, 13, 0.1) 1px, transparent 1px)
-               `,
-               backgroundSize: '40px 40px'
-             }}
-        />
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <div className="w-full h-full"
+               style={{
+                 backgroundImage: `
+                   linear-gradient(rgba(101, 163, 13, 0.1) 1px, transparent 1px),
+                   linear-gradient(90deg, rgba(101, 163, 13, 0.1) 1px, transparent 1px)
+                 `,
+                 backgroundSize: '40px 40px'
+               }}
+          />
+        </div>
       </div>
     </footer>
   );
