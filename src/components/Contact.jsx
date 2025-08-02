@@ -92,7 +92,7 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/youssef-berrissoul',
+      href: 'https://www.linkedin.com/in/youssef-berrissoul',
       color: 'accent'
     },
     {

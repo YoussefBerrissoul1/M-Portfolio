@@ -114,7 +114,7 @@ const Hero = () => {
               </motion.a>
               
               <motion.a
-                href="https://linkedin.com/in/youssef-berrissoul"
+                href="https://www.linkedin.com/in/youssef-berrissoul"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-visible-light hover:text-primary transition-colors"
